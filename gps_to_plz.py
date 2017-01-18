@@ -1,5 +1,3 @@
-#https://maps.googleapis.com/maps/api/geocode/json?components=route:Annegatan|administrative_area:Helsinki|country:Finland&key=YOUR_API_KEY
-
 from urlparse import urljoin
 import requests
 import csv
@@ -23,16 +21,6 @@ data =[ ['19552', '-10.9442376856709', '-37.0879052749376', '38082', '2015-11-23
 #['19569', '-10.92371551', '-37.10668792', '38092', '2016-01-19 13:01:47'],
 ]
 
-#csvfile = file("go_track_trackspoints.csv","r")
-#reader = csv.reader(csvfile)
-#for line in reader:
-#	print line
-d = [
-[1,2,3,4],
-[2,3,4,5],
-[3,4,5,6]
-]
-
 
 #functional programming
 #print range(len(data))
@@ -43,11 +31,6 @@ lngs = map(float,map(lambda x:data[x][2],range(len(data))))
 gps = zip(lats,lngs)
 print gps
 
-#map(float,data[range(len(data))][1])
-#csvfile.close()
-
-	#map(float,data[i][1])
-	#map(float,data[i][2])
 url = "https://maps.googleapis.com/maps/api/geocode/json?latlng={lat},{lng}&key=AIzaSyCNA7_Lq8TJ1lggfLB2kxQFC92B_rRpREg"
 t = 0
 while t < len(gps):
